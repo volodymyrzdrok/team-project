@@ -1,6 +1,16 @@
-@import './common';
-@import './example';
+@import '~node_modules/modern-normalize/modern-normalize.css';
 
-p {
-  color: red;
-}
+@import './utils/vars';
+@import './utils/fonts';
+@import './utils/mixins';
+@import './utils/base';
+@import './utils/common';
+
+@import './components/header';
+@import './components/hero';
+@import './components/products';
+@import './components/recipes';
+@import './components/gallery';
+@import './components/footer';
+@import './components/modal-contact';
+@import './components/modal-order';
