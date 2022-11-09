@@ -8,6 +8,7 @@ body {
     overflow: hidden;
   }
 }
+
 ul {
   padding: 0px;
   margin: 0px;
@@ -28,21 +29,26 @@ a {
 .container {
   margin: 0 auto;
   padding: 0 15px;
+
   @media (max-width: $to-mobile) {
     max-width: 415px;
   }
+
   @media (min-width: $mobile) {
     width: 415px;
   }
+
   @media (min-width: $tablet) {
     
     width: 960px;
   }
+
   @media (min-width: $desktop) {
     width: 1140px;
   }
   
 }
+
 
 h1,
 h2,
