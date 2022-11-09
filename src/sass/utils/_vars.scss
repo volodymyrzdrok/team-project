@@ -1,7 +1,7 @@
 // colors
 $decoration-bg-col: #f3f3f3;
 $bc-color: #100f0f;
-$primary-text-col: #F3F3F3;
+$primary-text-col: #f3f3f3;
 $secondary-text-col: #ffffff;
 $accent-text-col-mob: #bc1a1a;
 $accent-text-col: rgba(188, 26, 26, 0.71);
@@ -27,9 +27,9 @@ $mobile: 415px;
 $tablet: 1020px;
 $desktop: 1280px;
 
-$to-mobile: 414px;
-$to-tablet: 1019px;
-$to-desktop: 1279px;
+$to-mobile: 414.5px;
+$to-tablet: 1019.5px;
+$to-desktop: 1279.5px;
 
 // animation
-$animation: 1350ms cubic-bezier(0.4, 0, 0.2, 1);
+$animation: 350ms cubic-bezier(0.4, 0, 0.2, 1);
