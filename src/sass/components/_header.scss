@@ -70,7 +70,6 @@ body.modal-menu-open {
   padding: 0;
   border: none;
   background-color: transparent;
-  // padding: 12px 0px;
   cursor: pointer;
   transition: transform $animation;
   @media (min-width: $tablet) {
@@ -91,7 +90,6 @@ body.modal-menu-open {
   display: block;
 }
 
-// @media (max-width: $to-tablet) {
 .nav-menu__cont {
   overflow-y: scroll;
   // scroll-behavior: smooth;
@@ -107,7 +105,6 @@ body.modal-menu-open {
   animation: lightSpeedInRight;
   animation-duration: 450ms;
 }
-// }
 
 .nav-list {
   @media (max-width: $to-tablet) {

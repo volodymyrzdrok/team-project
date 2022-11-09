@@ -4,7 +4,7 @@
     closeModalBtn: document.querySelector('[data-modal-cont-close]'),
     modal: document.querySelector('[data-modal-cont]'),
   };
-  console.log('ти лох? ');
+
   refs.openModalBtn.addEventListener('click', toggleModal);
   refs.closeModalBtn.addEventListener('click', toggleModal);
 
