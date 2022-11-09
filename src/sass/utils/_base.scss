@@ -39,12 +39,14 @@ a {
   }
 
   @media (min-width: $tablet) {
+    
     width: 960px;
   }
 
   @media (min-width: $desktop) {
     width: 1140px;
   }
+  
 }
 
 
