@@ -22,8 +22,8 @@
   margin: -1px;
 }
 
-@mixin font($size, $line, $let-spac) {
+@mixin font($size, $line, $weight) {
   font-size: $size;
   line-height: calc($line / $size);
-  letter-spacing: $let-spac;
+  font-weight: $weight;
 }
