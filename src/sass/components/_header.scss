@@ -1,3 +1,24 @@
+.container__gradient {
+  background: linear-gradient(270deg, #6f6666 2.17%, #100f0f 75.72%);
+
+  @media (min-width: $tablet) {
+    background: linear-gradient(
+      256.51deg,
+      rgba(111, 102, 102, 0.9) 26.96%,
+      rgba(16, 15, 15, 0.9) 79.08%,
+      rgba(16, 15, 15, 0.9) 79.08%
+    );
+  }
+  @media (min-width: $desktop) {
+    background: linear-gradient(
+      228.52deg,
+      rgba(111, 102, 102, 0.9) 4.71%,
+      rgba(16, 15, 15, 0.9) 39.77%,
+      rgba(16, 15, 15, 0.9) 44.21%
+    );
+  }
+}
+
 .nav {
   @media (min-width: $tablet) {
     @include centeredFlex();
@@ -57,14 +78,13 @@
   }
 }
 
-.nav__btn .nav__btn--cross {
-  display: none;
-}
-.nav__btn.is-open-menu .nav__btn--cross {
-  display: block;
-}
+.nav__btn .nav__btn--cross,
 .nav__btn.is-open-menu .nav__btn--menu {
   display: none;
+}
+
+.nav__btn.is-open-menu .nav__btn--cross {
+  display: block;
 }
 
 .nav-menu__cont {
