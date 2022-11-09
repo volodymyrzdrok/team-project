@@ -1,0 +1,133 @@
+.gallery {
+    &__images {
+        position: relative;
+    }
+
+    &__list {
+        position: relative;
+
+        overflow: hidden;
+        margin: 0 auto;
+
+
+        @media (max-width: $to-mobile) {
+            height: 67vw;
+            width: 100%;
+        }
+
+        @media (min-width: $mobile) and (max-width: $to-tablet) {
+            height: 226px;
+            width: 336px;
+
+        }
+
+        @media (min-width: $tablet) and (max-width: $to-desktop) {
+            width: 770px;
+            height: 504px;
+        }
+
+        @media (min-width: $desktop) {
+            width: 1038px;
+            height: 504px;
+        }
+    }
+
+
+    &__item {
+        position: absolute;
+        padding: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        z-index: 0;
+        transition: opacity $animation;
+
+
+        &.visible {
+            opacity: 1;
+            z-index: 1;
+        }
+    }
+
+
+
+    &__img {
+        max-width: none;
+        height: 100%;
+    }
+
+
+    &__btn {
+
+        position: absolute;
+        overflow: hidden;
+        background: transparent;
+        border: none;
+        padding: 0;
+        text-align: center;
+        top: calc(50% - 16px);
+        margin: 0;
+        z-index: 2;
+
+
+        @media (max-width: $to-tablet) {
+            width: 12px;
+            height: 14px;
+
+            &__left {
+                left: 2px;
+            }
+
+            &__right {
+                right: 2px;
+            }
+        }
+
+        @media (min-width: $tablet) and (max-width: $to-desktop) {
+            width: 24px;
+            height: 24px;
+
+            &__left {
+                left: 29px;
+            }
+
+            &__right {
+                right: 29px;
+            }
+        }
+
+        @media (min-width: $desktop) {
+            width: 24px;
+            height: 24px;
+
+            &__left {
+                left: -15px;
+            }
+
+            &__right {
+                right: -15px;
+            }
+        }
+
+        &__svg {
+            fill: $icon-fill;
+            width: 100%;
+            height: 100%;
+
+            .gallery__btn__left & {
+                transform: rotate(-90deg);
+            }
+
+            .gallery__btn__right & {
+                transform: rotate(90deg);
+            }
+        }
+
+
+    }
+}
