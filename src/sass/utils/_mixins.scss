@@ -9,6 +9,7 @@
   flex-wrap: $wrap;
   gap: $gap;
 }
+
 @mixin visualHidden() {
   position: absolute;
   white-space: nowrap;
@@ -26,4 +27,6 @@
   font-size: $size;
   line-height: calc($line / $size);
   font-weight: $weight;
+
 }
+
