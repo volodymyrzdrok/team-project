@@ -94,6 +94,10 @@
   &:invalid {
     border-color: $link-active-col;
   }
+  &,
+  &:valid {
+    border-color: $primary-text-col;
+  }
 }
 .form-cont__label--textarea {
   display: block;
