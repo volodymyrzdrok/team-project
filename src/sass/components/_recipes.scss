@@ -1,0 +1,86 @@
+.recipes{
+    
+    padding: 20px 0;
+    @media screen and (min-width:$tablet) {
+        padding: 94px 0;
+    }
+
+    &__title{
+        @include visualHidden;
+    }
+
+    &__list{
+       
+        @media screen and (min-width:$tablet){
+            @include centeredFlex(space-between)
+        }
+        @media screen and (min-width:$desktop){
+            @include centeredFlex(space-around)
+        }
+    }
+
+    &__item{
+        text-align: center;
+        width: 245px;
+        height: 236px;
+        &:not(:last-child){
+            margin-bottom: 40px;
+        }
+        &:nth-child(2n+2){
+            margin-right: auto;
+        }
+        &:nth-child(2n+1) {
+            margin-left: auto;
+        }
+        @media screen and (min-width:$tablet){
+            width: 450px;
+            height: 307px;
+            &:not(:last-child) {
+                margin-bottom: 0;
+            }   
+            
+            &:nth-child(2n+2) {
+                margin-right: 0;
+            }
+            
+            &:nth-child(2n+1) {
+                margin-left: 0;
+            }
+            
+        }
+        
+        
+    }
+
+    &__video-box{
+        
+        position: relative;
+        width: 245px;
+        height: 236px;
+        margin-bottom: 8px;
+        border-radius: 8px;
+        overflow: hidden;
+        @media screen and (min-width:$tablet){
+            width: 450px;
+            height: 307px;
+        }
+    }
+
+    &__video{
+        outline: none;
+        border: none;
+      border-radius: 8px;
+       width: 100%;
+       height: 100%;
+    }
+
+    
+
+    &__desc{
+        @include font(20px, 24px, 400);
+        @media screen and (min-width:1020px) {
+            @include font(32px, 39px, 400);
+        }
+    }
+
+}
