@@ -1,0 +1,44 @@
+<div class="modal-cont__backdrop is-hidden-modal-cont" data-modal-cont>
+  <form action="./" class="modal-cont__form">
+    <p class="modal-cont__title">Leave your contacts and we will contact you</p>
+
+    <label class="form-cont__label"
+      >Name<input
+        type="text"
+        name="name"
+        class="form-cont__input"
+        autocomplete="name"
+        placeholder="Yuillia"
+    /></label>
+    <label class="form-cont__label"
+      >Telephone<input
+        type="tel"
+        name="phone"
+        class="form-cont__input"
+        placeholder="+380"
+    /></label>
+    <label class="form-cont__label"
+      >Email<input
+        type="email"
+        name="email"
+        class="form-cont__input"
+        autocomplete="email"
+        placeholder="Contact@gmail.com"
+    /></label>
+    <label class="form-cont__label--textarea">
+      <textarea
+        name="text"
+        cols="30"
+        rows="10"
+        class="form-cont__textarea"
+        placeholder="How can we help you?"
+      ></textarea>
+    </label>
+    <button class="form-cont__btn" type="submit">Contact us</button>
+    <button class="modal-cont__btn" data-modal-cont-close type="button">
+      <svg class="modal-cont__btn--icon">
+        <use href="./images/svgs.svg#close-btn"></use>
+      </svg>
+    </button>
+  </form>
+</div>

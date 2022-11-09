@@ -11,7 +11,7 @@
     menuBtnRef.classList.toggle('is-open-menu');
     menuBtnRef.setAttribute('aria-expanded', !expanded);
 
-    document.body.classList.toggle('modal-open');
+    document.body.classList.toggle('modal-menu-open');
     //  mobileNavRef.classList.toggle('is-open-menu-backdrop');
   });
 })();

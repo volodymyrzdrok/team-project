@@ -1,3 +1,7 @@
+body.modal-menu-open {
+  overflow: hidden;
+}
+
 .container__gradient {
   background: linear-gradient(270deg, #6f6666 2.17%, #100f0f 75.72%);
 
@@ -25,7 +29,7 @@
   }
 }
 .nav__cont {
-  @include centeredFlex(space-between, null);
+  @include centeredFlex(space-between, center);
   @media (max-width: $to-tablet) {
     .nav.nav-menu__cont & {
       margin-bottom: 28px;
@@ -66,7 +70,7 @@
   padding: 0;
   border: none;
   background-color: transparent;
-  padding: 12px 0px;
+  // padding: 12px 0px;
   cursor: pointer;
   transition: transform $animation;
   @media (min-width: $tablet) {
@@ -87,6 +91,7 @@
   display: block;
 }
 
+// @media (max-width: $to-tablet) {
 .nav-menu__cont {
   overflow-y: scroll;
   // scroll-behavior: smooth;
@@ -102,6 +107,7 @@
   animation: lightSpeedInRight;
   animation-duration: 450ms;
 }
+// }
 
 .nav-list {
   @media (max-width: $to-tablet) {
@@ -162,6 +168,8 @@
     display: none;
     .nav.nav-menu__cont & {
       display: block;
+
+      margin-bottom: 60px;
     }
   }
 

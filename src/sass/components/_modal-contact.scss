@@ -1,0 +1,138 @@
+.modal-cont__backdrop {
+  position: fixed;
+  z-index: 100;
+  width: 100vw;
+  height: 100vh;
+  @include centeredFlex();
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+  transition: opacity $animation;
+  overflow-y: scroll;
+}
+
+.modal-cont__backdrop.is-hidden-modal-cont {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal-cont__backdrop.is-hidden-modal-cont .modal-cont__form {
+  transform: scale(0.3);
+}
+
+.modal-cont__form {
+  position: relative;
+  scroll-behavior: smooth;
+  background-color: $bc-color;
+  border-radius: 16px;
+  box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.3);
+  transform: scale(1);
+  transition: transform $animation;
+  padding: 60px 15px;
+  @media (max-width: $to-tablet) {
+    max-width: 415px;
+  }
+  @media (min-width: $tablet) {
+    width: 530px;
+    padding: 60px;
+  }
+}
+
+.modal-cont__btn {
+  position: absolute;
+  right: 34px;
+  top: 16px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  fill: $primary-text-col;
+  cursor: pointer;
+  transition: transform $animation;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+.modal-cont__btn--icon {
+  width: 32px;
+  height: 32px;
+}
+.modal-cont__title {
+  margin-bottom: 52px;
+  text-align: center;
+  @include font(28px, 34px, 700);
+  @media (max-width: $to-tablet) {
+    max-width: 355px;
+  }
+  @media (min-width: $tablet) {
+    width: 410px;
+    @include font(32px, 39px, 700);
+  }
+}
+.form-cont__label {
+  display: flex;
+  flex-direction: column;
+  @include font(16px, 20px, 400);
+  margin-bottom: 20px;
+}
+.form-cont__input {
+  outline: none;
+  height: 50px;
+  border: 1px solid $primary-text-col;
+  background-color: $bc-color;
+  border-radius: 16px;
+  padding-left: 15px;
+  transition: border-color $animation;
+  margin-top: 12px;
+  color: $secondary-text-col;
+
+  &::placeholder {
+    color: $placeholder-col;
+  }
+
+  &:invalid {
+    border-color: $link-active-col;
+  }
+}
+.form-cont__label--textarea {
+  display: block;
+}
+.form-cont__textarea {
+  outline: none;
+  padding: 15px;
+  height: 100px;
+  width: 100%;
+  resize: none;
+  border: 1px solid $primary-text-col;
+  background-color: $bc-color;
+  border-radius: 16px;
+  transition: border-color $animation;
+  margin-bottom: 40px;
+  color: $secondary-text-col;
+
+  &:focus {
+    //  border-color:
+  }
+  &::placeholder {
+    color: $placeholder-col;
+  }
+}
+.form-cont__btn {
+  background-color: #321111;
+  color: $primary-text-col;
+  height: 66px;
+  width: 100%;
+  @include font(20px, 24px, 800);
+  font-family: inherit;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: box-shadow $animation, background-color $animation;
+
+  &:hover,
+  &:focus {
+    background-color: $link-active-col;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.05);
+  }
+}
