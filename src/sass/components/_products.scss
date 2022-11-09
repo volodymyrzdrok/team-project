@@ -1,6 +1,6 @@
 .products {
   position: relative;
-  padding: 50px 0;
+  
 }
 
 .products__title {
@@ -13,6 +13,9 @@
   &:nth-child(2n) {
     flex-direction: row-reverse;
   }
+  @media screen and (min-width: $desktop) {
+    margin: 0 90px;
+  }
 }
 
 .products__content {
@@ -22,7 +25,7 @@
     text-align: center;
   }
 
-  @media screen and (max-width: $to-desktop) {
+  @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
     width: 406px;
     margin-left: 64px;
     margin-right: auto;
@@ -32,8 +35,8 @@
     margin-left: 90px;
     margin-right: auto;
   }
-  &:nth-child(2n) {
-    @media screen and (max-width: $to-desktop) {
+  &--right {
+    @media screen and (min-width: $tablet) and (max-width: $to-desktop) {
       width: 443px;
       margin-left: auto;
       margin-right: 64px;
@@ -107,6 +110,7 @@
 }
 
 .products__image {
+  
   border-radius: 50%;
   box-shadow: 0px 0px 50px #7c7070;
 }
@@ -115,7 +119,7 @@
 .products__prev {
   cursor: pointer;
   position: absolute;
-  top: 0;
+  top: -10px;
   left: 50%;
   width: auto;
   padding: 16px;
