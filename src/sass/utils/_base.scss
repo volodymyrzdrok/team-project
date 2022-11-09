@@ -29,18 +29,16 @@ a {
   margin: 0 auto;
   padding: 0 15px;
   @media (max-width: $to-mobile) {
-    max-width: 385px;
+    max-width: 415px;
   }
   @media (min-width: $mobile) {
-    width: 385px;
+    width: 415px;
   }
   @media (min-width: $tablet) {
-    padding: 0 45px;
-    width: 930px;
+    width: 960px;
   }
   @media (min-width: $desktop) {
-    padding: 0 85px;
-    width: 1110px;
+    width: 1140px;
   }
 }
 
