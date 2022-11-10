@@ -1,0 +1,183 @@
+body.modal-menu-open {
+  overflow: hidden;
+}
+
+.container__gradient {
+  background: linear-gradient(270deg, #6f6666 2.17%, #100f0f 75.72%);
+
+  @media (min-width: $tablet) {
+    background: linear-gradient(
+      256.51deg,
+      rgba(111, 102, 102, 0.9) 26.96%,
+      rgba(16, 15, 15, 0.9) 79.08%,
+      rgba(16, 15, 15, 0.9) 79.08%
+    );
+  }
+  @media (min-width: $desktop) {
+    background: linear-gradient(
+      228.52deg,
+      rgba(111, 102, 102, 0.9) 4.71%,
+      rgba(16, 15, 15, 0.9) 39.77%,
+      rgba(16, 15, 15, 0.9) 44.21%
+    );
+  }
+}
+
+.nav {
+  @media (min-width: $tablet) {
+    @include centeredFlex();
+  }
+}
+.nav__cont {
+  @include centeredFlex(space-between, center);
+  @media (max-width: $to-tablet) {
+    .nav.nav-menu__cont & {
+      margin-bottom: 28px;
+    }
+  }
+  @media (min-width: $tablet) {
+    margin-right: 140px;
+  }
+}
+.nav__icons {
+  width: 32px;
+  height: 32px;
+  fill: $primary-text-col;
+}
+.logo {
+  @include centeredFlex(null, center);
+  @include font(20px, 24px, 700);
+  text-transform: uppercase;
+  color: $primary-text-col;
+  padding: 12px 0px;
+}
+.logo__icon {
+  margin-right: 16px;
+  animation: swing;
+  animation-duration: 1.5s;
+  transition: fill $animation;
+  .logo:hover &,
+  .logo:focus & {
+    fill: $link-active-col;
+    -webkit-animation: shake 1s;
+    animation: shake 1s;
+  }
+}
+
+.nav__btn {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition: transform $animation;
+  @media (min-width: $tablet) {
+    display: none;
+  }
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}
+
+.nav__btn .nav__btn--cross,
+.nav__btn.is-open-menu .nav__btn--menu {
+  display: none;
+}
+
+.nav__btn.is-open-menu .nav__btn--cross {
+  display: block;
+}
+
+.nav-menu__cont {
+  overflow-y: scroll;
+  // scroll-behavior: smooth;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $bc-color;
+  z-index: 99;
+  padding: 8px 20px;
+  // slideInRight
+  animation: lightSpeedInRight;
+  animation-duration: 450ms;
+}
+
+.nav-list {
+  @media (max-width: $to-tablet) {
+    display: none;
+    .nav.nav-menu__cont & {
+      @include centeredFlex();
+      flex-direction: column;
+    }
+  }
+  @media (min-width: $tablet) {
+    @include centeredFlex();
+  }
+}
+.nav-list__item {
+  @media (max-width: $to-tablet) {
+    margin-bottom: 28px;
+    &:last-child {
+      margin-bottom: 40px;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    &:not(:last-child) {
+      margin-right: 52px;
+    }
+  }
+}
+.nav-list__link {
+  display: inline-block;
+  @include font(20px, 24px, 600);
+  color: $primary-text-col;
+  @media (min-width: $tablet) {
+    padding: 30px 0px;
+    @include font(16px, 20px, 600);
+  }
+
+  transition: color $animation;
+  &:hover,
+  &:focus {
+    color: $link-active-col;
+  }
+}
+
+.nav__cont-btn {
+  margin: 0 auto;
+  min-width: 160px;
+  height: 40px;
+  color: $primary-text-col;
+  background-color: transparent;
+  @include font(16px, 20px, 800);
+  border: 1px solid $primary-text-col;
+  border-radius: 16px;
+  cursor: pointer;
+
+  transition: border-color $animation, color $animation, box-shadow $animation;
+
+  @media (max-width: $to-tablet) {
+    display: none;
+    .nav.nav-menu__cont & {
+      display: block;
+
+      margin-bottom: 60px;
+    }
+  }
+
+  @media (min-width: $tablet) {
+    margin-right: 0;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $link-active-col;
+    color: $link-active-col;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.05);
+  }
+}

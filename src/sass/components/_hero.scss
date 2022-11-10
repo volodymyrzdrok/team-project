@@ -1,0 +1,233 @@
+.hero__wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  padding: 40px 0;
+
+  @media screen and (min-width: 380px) and (max-width: $to-tablet) {
+    background: url(../images/Hero/Mobile/hero-frame.webp) no-repeat;
+    background-position: -15% 38%;
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background: url(../images/Hero/Mobile/hero-frame@2x.webp) no-repeat;
+      background-position: -15% 38%;
+      background-size: 325px 274px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    // min-height: 720px;
+    gap: 74px;
+    padding: 72px 0 31px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+    justify-content: space-between;
+
+    padding: 100px 0;
+  }
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  gap: 228px;
+
+  @media screen and (min-width: $tablet) {
+    // margin-top: 41px;
+    gap: 48px;
+    max-width: calc((447 * 100%) / 930);
+  }
+  @media screen and (min-width: $desktop) {
+    // margin-top: 29px;
+    max-width: calc((447 * 100%) / 1100);
+  }
+}
+
+.hero__title-wrapper {
+  z-index: 2;
+}
+
+.hero__title {
+  margin-bottom: 16px;
+
+  @include centeredFlex(null, center);
+  max-width: 195px;
+
+  @include font(30px, 37px, 500);
+  text-transform: uppercase;
+
+  &::before {
+    content: '';
+    display: block;
+    margin-right: 8px;
+    width: 1px;
+    height: 66px;
+    background-color: $decoration-bg-col;
+
+    @media screen and (min-width: $tablet) {
+      margin-right: 12px;
+      height: 153px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-width: 100%;
+    margin-bottom: 24px;
+
+    @include font(64px, 78px, null);
+  }
+}
+
+.hero__subtitle {
+  @include font(16px, 20px, 400);
+  letter-spacing: -0.01em;
+
+  &--accent {
+    font-weight: 600;
+    color: $accent-text-col-mob;
+
+    @media screen and (min-width: $tablet) {
+      color: $accent-text-col;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    @include font(36px, 44px, 300);
+
+    &--accent {
+      font-weight: 900;
+    }
+  }
+}
+
+.hero__main-btn {
+  @include centeredFlex();
+  min-width: 100%;
+  height: 66px;
+  padding: 0;
+  margin-bottom: 16px;
+
+  @include font(20px, 24px, null);
+  color: $primary-text-col;
+
+  background: $btn-bg-col;
+  border: none;
+  border-radius: 16px;
+
+  transition: background-color $animation;
+
+  &:hover,
+  &:focus {
+    background-color: $btn-bg-active-col;
+  }
+
+  @media screen and (min-width: $tablet) {
+    min-width: 302px;
+    height: 77px;
+    margin-bottom: 48px;
+  }
+}
+
+.hero__product-content {
+  display: flex;
+  height: 78px;
+}
+
+.hero__product-info {
+  @include centeredFlex(null);
+
+  &:first-child::after {
+    content: '';
+    height: 100%;
+    width: 1px;
+    margin: 0 22px;
+    background-color: $decoration-bg-col;
+
+    @media screen and(min-width: $tablet) {
+      margin: 0 19px 0 10px;
+    }
+    @media screen and(min-width: $desktop) {
+      margin: 0 12px;
+    }
+  }
+}
+
+.hero__product-quantity {
+  margin-right: 12px;
+  @include font(32px, 39px, 600);
+
+  @media screen and(min-width: $tablet) and (max-width: $desktop) {
+    margin-right: 10px;
+  }
+}
+
+.hero__socials {
+  @include centeredFlex();
+  gap: 40px;
+
+  @media screen and(min-width: $desktop) {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+.hero__item-link {
+  display: block;
+}
+
+.hero__socials-icon {
+  display: block;
+  fill: $icon-fill;
+
+  transition: fill $animation;
+
+  .hero__item-link:hover &,
+  .hero__item-link:focus & {
+    fill: $icon-fill-active;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.hero__img-box {
+  position: absolute;
+  top: 24px;
+  right: 0;
+
+  // width: 202px;
+  width: auto;
+  height: 350px;
+
+  @media screen and (min-width: $tablet) {
+    top: 32px;
+
+    // width: 432px;
+    height: 579px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    top: 72px;
+    right: 71px;
+
+    // width: 432px;
+    height: 577px;
+  }
+}
+
+.hero__sauce-image {
+  height: 100%;
+
+  @media screen and (max-width: 380px) {
+    opacity: 0.2;
+  }
+}
