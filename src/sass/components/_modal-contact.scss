@@ -3,11 +3,12 @@
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  @include centeredFlex();
+  // @include centeredFlex();
   background-color: rgba(255, 255, 255, 0.2);
   opacity: 1;
   transition: opacity $animation;
   overflow-y: scroll;
+  padding: 40px 0;
 }
 
 .modal-cont__backdrop.is-hidden-modal-cont {
@@ -20,6 +21,7 @@
 }
 
 .modal-cont__form {
+  margin: 0 auto;
   position: relative;
   scroll-behavior: smooth;
   background-color: $bc-color;
@@ -95,6 +97,7 @@
 
   &:invalid {
     border-color: $link-active-col;
+    box-shadow: 0px 4px 4px rgba(188, 26, 26, 0.2);
   }
   &,
   &:valid {
@@ -113,11 +116,12 @@
   border: 1px solid $primary-text-col;
   background-color: $bc-color;
   border-radius: 16px;
-  transition: border-color $animation;
+  transition: box-shadow $animation;
   margin-bottom: 40px;
   color: $secondary-text-col;
 
   &:focus {
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.2);
   }
   &::placeholder {
     color: $placeholder-col;

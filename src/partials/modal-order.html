@@ -1,160 +1,169 @@
-<div class="order">
-  <button class="order__close-btn" type="button">
-    <svg class="order__close-icon" width="32" height="32">
-      <use href="./images/svgs.svg#close-btn"></use>
-    </svg>
-  </button>
-  <!-- ORDER FORM -->
-  <form name="order" class="order-form">
-    <h1 class="order-form__title">Your ordering</h1>
-    <!-- CONTACTS GROUP -->
-    <div
-      class="order-form__group-block"
-      role="group"
-      aria-labelledby="contact-title"
-    >
-      <h2 class="order-form__group-heading" id="contact-title">Contacts</h2>
-      <label class="order-form__label">
-        <span>Surname</span>
-        <input
-          class="order-form__input"
-          placeholder="Krutas"
-          name="surname"
-          type="text"
-        />
-      </label>
-      <label class="order-form__label">
-        <span>Name</span>
-        <input
-          class="order-form__input"
-          placeholder="Yuliia"
-          name="name"
-          type="text"
-        />
-      </label>
-      <label class="order-form__label">
-        <span>Telephone</span>
-        <input
-          class="order-form__input"
-          placeholder="+380"
-          name="tel"
-          type="tel"
-        />
-      </label>
-      <label class="order-form__label">
-        <span>City</span>
-        <div class="order-form__select-wrapper">
-          <svg class="order-form__select-icon" width="24" height="24">
-            <use href="./images/svgs.svg#custom-select"></use>
-          </svg>
-          <select
-            class="order-form__input order-form__input--select"
-            name="city"
-          >
-            <option class="order-form__city-option" value="Kyiv">Kyiv</option>
-            <option class="order-form__city-option" value="Lviv">Lviv</option>
-            <option class="order-form__city-option" value="">London</option>
-          </select>
-        </div>
-      </label>
-    </div>
-    <!-- DELIVERY GROUP -->
-    <div
-      class="order-form__group-block"
-      role="group"
-      aria-labelledby="delivery-title"
-    >
-      <h2 class="order-form__group-heading" id="delivery-title">Delivery</h2>
-
-      <div class="order-form__delivery-choice">
-        <input
-          class="order-form__delivery-input"
-          type="radio"
-          name="delivery"
-          id="department"
-          value="department"
-          checked
-        />
-        <label
-          class="order-form__del-label order-form__del-label--bord-left"
-          for="department"
-        >
-          Delivery to department of Nova Poshta
+<div class="order__backdrop is-hidden-modal-order" data-modal-order>
+  <div class="order">
+    <button class="order__close-btn" type="button" data-modal-order-close>
+      <svg class="order__close-icon" width="32" height="32">
+        <use href="./images/svgs.svg#close-btn"></use>
+      </svg>
+    </button>
+    <!-- ORDER FORM -->
+    <form action="./" name="order" class="order-form">
+      <h1 class="order-form__title">Your ordering</h1>
+      <!-- CONTACTS GROUP -->
+      <div
+        class="order-form__group-block"
+        role="group"
+        aria-labelledby="contact-title"
+      >
+        <h2 class="order-form__group-heading" id="contact-title">Contacts</h2>
+        <label class="order-form__label">
+          <span>Surname</span>
+          <input
+            class="order-form__input"
+            placeholder="Krutas"
+            name="surname"
+            type="text"
+            pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+          />
         </label>
-        <input
-          class="order-form__delivery-input"
-          type="radio"
-          name="delivery"
-          id="courier"
-          value="courier"
-        />
-        <label
-          class="order-form__del-label order-form__del-label--bord-right"
-          for="courier"
-        >
-          Delivery by courier of Nova Poshta
+        <label class="order-form__label">
+          <span>Name</span>
+          <input
+            class="order-form__input"
+            placeholder="Yuliia"
+            name="name"
+            type="text"
+            pattern="^[а-яА-ЯёЁa-zA-Z]+$"
+          />
+        </label>
+        <label class="order-form__label">
+          <span>Telephone</span>
+          <input
+            class="order-form__input"
+            placeholder="+380"
+            name="tel"
+            type="tel"
+            pattern="[\+380][0-9]{12}"
+          />
+        </label>
+        <label class="order-form__label">
+          <span>City</span>
+          <div class="order-form__select-wrapper">
+            <svg class="order-form__select-icon" width="24" height="24">
+              <use href="./images/svgs.svg#custom-select"></use>
+            </svg>
+            <select
+              class="order-form__input order-form__input--select"
+              name="city"
+            >
+              <option class="order-form__city-option" value="Kyiv">Kyiv</option>
+              <option class="order-form__city-option" value="Lviv">Lviv</option>
+              <option class="order-form__city-option" value="">London</option>
+            </select>
+          </div>
         </label>
       </div>
-      <label class="order-form__label">
-        <span>Select department</span>
-        <div class="order-form__select-wrapper">
-          <svg class="order-form__select-icon" width="24" height="24">
-            <use href="./images/svgs.svg#custom-select"></use>
-          </svg>
-          <select
-            class="order-form__input order-form__input--select"
-            name="department"
-          >
-            <option value="main">Department</option>
-            <option value="1">Department N1</option>
-            <option value="2">Department N2</option>
-            <option value="3">Department N3</option>
-          </select>
-        </div>
-      </label>
-    </div>
-    <!-- PAYMENT-method GROUP -->
-    <div class="order-form__group-block" role="group" aria-labelledby="payment">
-      <h2 class="order-form__group-heading" id="payment">Payment method</h2>
-      <label class="order-form__label order-form__label--custom-btn">
-        <input
-          class="order-form__payment-input"
-          type="radio"
-          name="payment-method"
-          value="credit-card"
-          checked
-        />
-        <span class="order-form__radio-btn"></span>
-        Credit card (Visa, Mastercard, ApplePay)
-      </label>
-      <label class="order-form__label order-form__label--custom-btn">
-        <input
-          class="order-form__payment-input"
-          type="radio"
-          name="payment-method"
-          value="cash"
-        />
-        <span class="order-form__radio-btn"></span>
-        Cash on delivery
-      </label>
-      <a href="#" class="order-form__comment">Add a comment to the order</a>
-      <label
-        class="order-form__label order-form__label--custom-btn order-form__label--fw-light"
+      <!-- DELIVERY GROUP -->
+      <div
+        class="order-form__group-block"
+        role="group"
+        aria-labelledby="delivery-title"
       >
-        <input
-          class="order-form__confirm-ckeckbox"
-          type="checkbox"
-          name="call-confirm"
-          value="yes"
-        />
-        <span class="order-form__custom-checkbox">
-          <svg class="order-form__custom-checkbox--icon">
-            <use href="./images/svgs.svg#checkbox"></use>
-          </svg>
-        </span>
-        Do not call to confirm
-      </label>
-    </div>
-    <button class="order-form__confirm-btn" type="submit">Buy now</button>
-  </form>
+        <h2 class="order-form__group-heading" id="delivery-title">Delivery</h2>
+
+        <div class="order-form__delivery-choice">
+          <input
+            class="order-form__delivery-input"
+            type="radio"
+            name="delivery"
+            id="department"
+            value="department"
+            checked
+          />
+          <label
+            class="order-form__del-label order-form__del-label--bord-left"
+            for="department"
+          >
+            Delivery to department of Nova Poshta
+          </label>
+          <input
+            class="order-form__delivery-input"
+            type="radio"
+            name="delivery"
+            id="courier"
+            value="courier"
+          />
+          <label
+            class="order-form__del-label order-form__del-label--bord-right"
+            for="courier"
+          >
+            Delivery by courier of Nova Poshta
+          </label>
+        </div>
+        <label class="order-form__label">
+          <span>Select department</span>
+          <div class="order-form__select-wrapper">
+            <svg class="order-form__select-icon" width="24" height="24">
+              <use href="./images/svgs.svg#custom-select"></use>
+            </svg>
+            <select
+              class="order-form__input order-form__input--select"
+              name="department"
+            >
+              <option value="main">Department</option>
+              <option value="1">Department N1</option>
+              <option value="2">Department N2</option>
+              <option value="3">Department N3</option>
+            </select>
+          </div>
+        </label>
+      </div>
+      <!-- PAYMENT-method GROUP -->
+      <div
+        class="order-form__group-block"
+        role="group"
+        aria-labelledby="payment"
+      >
+        <h2 class="order-form__group-heading" id="payment">Payment method</h2>
+        <label class="order-form__label order-form__label--custom-btn">
+          <input
+            class="order-form__payment-input"
+            type="radio"
+            name="payment-method"
+            value="credit-card"
+            checked
+          />
+          <span class="order-form__radio-btn"></span>
+          Credit card (Visa, Mastercard, ApplePay)
+        </label>
+        <label class="order-form__label order-form__label--custom-btn">
+          <input
+            class="order-form__payment-input"
+            type="radio"
+            name="payment-method"
+            value="cash"
+          />
+          <span class="order-form__radio-btn"></span>
+          Cash on delivery
+        </label>
+        <a href="#" class="order-form__comment">Add a comment to the order</a>
+        <label
+          class="order-form__label order-form__label--custom-btn order-form__label--fw-light"
+        >
+          <input
+            class="order-form__confirm-ckeckbox"
+            type="checkbox"
+            name="call-confirm"
+            value="yes"
+          />
+          <span class="order-form__custom-checkbox">
+            <svg class="order-form__custom-checkbox--icon">
+              <use href="./images/svgs.svg#checkbox"></use>
+            </svg>
+          </span>
+          Do not call to confirm
+        </label>
+      </div>
+      <button class="order-form__confirm-btn" type="submit">Buy now</button>
+    </form>
+  </div>
 </div>

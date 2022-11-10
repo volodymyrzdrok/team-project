@@ -3,11 +3,11 @@
   z-index: 100;
   width: 100vw;
   height: 100vh;
-  @include centeredFlex();
   background-color: rgba(255, 255, 255, 0.2);
   opacity: 1;
   transition: opacity $animation;
   overflow-y: scroll;
+  padding: 40px 0;
 }
 .order__backdrop.is-hidden-modal-order {
   opacity: 0;
@@ -17,6 +17,7 @@
   transform: scale(0.3);
 }
 .order {
+  margin: 40px 0;
   position: relative;
   scroll-behavior: smooth;
   background-color: $bc-color;
@@ -25,7 +26,7 @@
   transform: scale(1);
   transition: transform $animation;
   padding: 60px 15px;
-  // margin: 0 auto;
+  margin: 0 auto;
 
   @media screen and (max-width: $to-mobile) {
     max-width: 414px;
@@ -118,6 +119,14 @@
   &::placeholder {
     color: $placeholder-col;
   }
+  &:invalid {
+    border-color: $link-active-col;
+    box-shadow: 0px 4px 4px rgba(188, 26, 26, 0.2);
+  }
+  &,
+  &:valid {
+    border-color: $primary-text-col;
+  }
 
   &--select {
     color: $placeholder-col;
@@ -133,6 +142,7 @@
 
 .order-form__select-icon {
   position: absolute;
+  pointer-events: none;
   top: 14px;
   right: 14px;
 
@@ -149,13 +159,13 @@
 }
 
 .order-form__del-label {
+  cursor: pointer;
   @include centeredFlex();
   width: 50%;
   padding: 8px 31px;
-
   text-align: center;
-
   border: 1px solid $decoration-bg-col;
+  transition: border-color $animation, background-color $animation;
 
   &--bord-left {
     border-right: none;
@@ -176,6 +186,17 @@
   }
 }
 
+.order-form__radio-btn {
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: $primary-text-col;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  transition: background-color $animation;
+}
+
 .order-form__payment-input {
   @include visualHidden();
 
@@ -192,36 +213,24 @@
       height: 12px;
       background: #2c2c2c;
       border-radius: 50%;
+      animation: zoomIn;
+      animation-duration: 250ms;
     }
   }
-}
-
-.order-form__radio-btn {
-  position: relative;
-
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: #f3f3f3;
-  border: 1px solid #000000;
-  border-radius: 50%;
 }
 
 .order-form__comment {
   display: block;
   margin-bottom: 20px;
-
   color: inherit;
   text-decoration: underline;
 }
 
 .order-form__custom-checkbox {
   position: relative;
-
   @include centeredFlex();
   width: 18px;
   height: 18px;
-
   border: 2px solid $decoration-bg-col;
   border-radius: 3px;
 }
@@ -229,6 +238,7 @@
   fill: transparent;
   width: 16px;
   height: 16px;
+  transition: fill $animation;
 }
 
 .order-form__confirm-ckeckbox {
@@ -248,4 +258,11 @@
   border: none;
   border-radius: 16px;
   background-color: $btn-bg-col;
+  cursor: pointer;
+  transition: box-shadow $animation, background-color $animation;
+  &:hover,
+  &:focus {
+    background-color: $link-active-col;
+    box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.05);
+  }
 }
