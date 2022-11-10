@@ -1,8 +1,9 @@
 .recipes{
-    
-    padding: 20px 0;
+    padding-top: 20px;
+    padding-bottom: 120px;
     @media screen and (min-width:$tablet) {
-        padding: 94px 0;
+        padding-top: 94px;
+        padding-bottom: 194px;
     }
 
     &__title{
@@ -22,7 +23,6 @@
     &__item{
         text-align: center;
         width: 245px;
-        height: 236px;
         &:not(:last-child){
             margin-bottom: 40px;
         }

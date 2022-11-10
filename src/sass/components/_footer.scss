@@ -1,106 +1,13 @@
-/*.footer{
-display: flex;
-justify-content: space-between;
+.footer__section {
+  @media (min-width: $tablet) {
+    border-top: 1px solid rgba(243, 243, 243, 0.6);
+  }
 }
-
-.footer-logo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-logo__svg{
-    fill:#F3F3F3;
-    margin-right: 16px;
-}
-
-.footer-logo__name{
-color: #F3F3F3;
-font-weight: 700;
-font-size: 20px;
-line-height: 24px;  
-
-}
-
-.footer-nav{
-margin-top: 24px;
-
-}
-
-.footer-nav__item{
-margin-bottom: 20px;
-}
-
-.footer-nav__link{
-    color:#F3F3F3;
-}
-
-.contact{
-    margin-top: 46px;
-}
-
-.contact__item{
-
-}
-
-.contact__link{
-    color: #F3F3F3;
-    display: flex;
-    align-items: center;
-    margin-bottom: 45px;
-}
-
-.contact__icon-location{
-    margin-right: 11.75px;
-    fill:#F3F3F3;
-
-}
-
-.contact__icon-email{
-margin-right: 9.3px;
-    fill:#F3F3F3;
-
-}
-
-.social{
-margin-top: 20px;
-}
-
-.social__item{
-margin-bottom: 20px;
-}
-
-.social__link {
-
-}
-
-.social__link--footer{
-
-}
-
-.social__icon{
-    fill:#F3F3F3;
-}
-
-.conditions{
-    color: #979797;
-    font-weight: 400;
-font-size: 14px;
-line-height: 17px;
-    display: flex;
-    justify-content: center;
-}
-
-.conditions_link{
-    color: #F3F3F3;
-    text-decoration: underline;
-}*/
-
-/*@media screen and (max-width: $mobile) {*/
 
 .footer {
   display: flex;
   justify-content: space-between;
+
   @media (min-width: $tablet) {
     display: inline;
   }
@@ -112,27 +19,21 @@ line-height: 17px;
 }
 
 .footer-logo__svg {
-  fill: #f3f3f3;
+  fill: $icon-fill;
   margin-right: 12px;
+
   @media (min-width: $tablet) {
     margin-right: 16px;
   }
 }
 
 .footer-logo__name {
-  /*color: #F3F3F3;
-font-weight: 600;
-font-size: 16px;
-line-height: 19px; */
-  color: #f3f3f3;
+  color: $icon-fill;
 
   @include font(16px, 19px, 600);
 
   @media (min-width: $tablet) {
-    // font-family: Montserrat;
-    /*font-size: 20px;
-font-weight: 700;
-line-height: 24px;*/
+    font-family: Montserrat;
 
     @include font(20px, 24px, 700);
     letter-spacing: 0em;
@@ -155,10 +56,13 @@ line-height: 24px;*/
 }
 
 .footer-nav__link {
-  color: #f3f3f3;
+  color: $icon-fill;
+  transition: color $animation;
+
   &:hover,
   &:focus {
-    color: blue;
+    transition: color $animation;
+    color: $link-active-col;
   }
 }
 
@@ -172,8 +76,6 @@ line-height: 24px;*/
 
 .contact {
   margin-top: 34px;
-  @media (min-width: $tablet) {
-  }
 }
 
 .contact__item {
@@ -181,28 +83,45 @@ line-height: 24px;*/
 }
 
 .contact__link {
-  color: #f3f3f3;
+  color: $icon-fill;
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+
+  transition: color $animation;
+
+  &:hover,
+  &:focus {
+    color: $link-active-col;
+  }
 
   @media (min-width: $tablet) {
     margin-bottom: 45px;
   }
 }
 
+.contact__icon {
+  transition: fill $animation;
+
+  .contact__link:hover &,
+  .contact__link:focus & {
+    fill: $link-active-col;
+  }
+}
+
 .contact__icon-location {
   margin-right: 11.75px;
-  fill: #f3f3f3;
+  fill: $icon-fill;
 }
 
 .contact__icon-email {
   margin-right: 9.3px;
-  fill: #f3f3f3;
+  fill: $icon-fill;
 }
 
 .social {
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .social-hidden-div {
@@ -222,7 +141,21 @@ line-height: 24px;*/
 }
 
 .social__icon {
-  fill: #f3f3f3;
+  width: 16px;
+  height: 16px;
+  fill: $icon-fill;
+
+  transition: fill $animation;
+
+  .social__link:hover &,
+  .social__link:focus & {
+    fill: $link-active-col;
+  }
+
+  @media (min-width: $desktop) {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 .conditions {
@@ -230,9 +163,13 @@ line-height: 24px;*/
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto;
   font-size: 8px;
   margin-top: 4px;
+
+  .contact__item {
+    margin-bottom: 16px;
+  }
 
   display: flex;
   justify-content: center;
@@ -245,6 +182,6 @@ line-height: 24px;*/
 }
 
 .conditions_link {
-  color: #f3f3f3;
+  color: $icon-fill;
   text-decoration: underline;
 }
