@@ -65,6 +65,7 @@
       aria-labelledby="delivery-title"
     >
       <h2 class="order-form__group-heading" id="delivery-title">Delivery</h2>
+
       <div class="order-form__delivery-choice">
         <input
           class="order-form__delivery-input"
@@ -121,6 +122,7 @@
           type="radio"
           name="payment-method"
           value="credit-card"
+          checked
         />
         <span class="order-form__radio-btn"></span>
         Credit card (Visa, Mastercard, ApplePay)
@@ -145,7 +147,11 @@
           name="call-confirm"
           value="yes"
         />
-        <span class="order-form__custom-checkbox"></span>
+        <span class="order-form__custom-checkbox">
+          <svg class="order-form__custom-checkbox--icon">
+            <use href="./images/svgs.svg#checkbox"></use>
+          </svg>
+        </span>
         Do not call to confirm
       </label>
     </div>
