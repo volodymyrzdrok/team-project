@@ -107,6 +107,18 @@
   }
 }
 
+.hero__subtitle--accent {
+  display: inline-block;
+  animation: backInDown;
+  animation-delay: 0.3s;
+  animation-duration: 0.8s;
+}
+
+.hero__sauce-image {
+  animation: fadeInBottomLeft;
+  animation-duration: 1s;
+}
+
 .hero__main-btn {
   @include centeredFlex();
   min-width: 100%;

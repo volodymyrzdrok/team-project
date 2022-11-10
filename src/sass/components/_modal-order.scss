@@ -65,10 +65,10 @@
 
 .order-form__title {
   margin-bottom: 40px;
-  @include font(28px, 34px, null);
+  @include font(28px, 34px, 700);
   text-align: center;
   @media (min-width: $tablet) {
-    @include font(32px, 39px, null);
+    @include font(32px, 39px, 700);
   }
 }
 
