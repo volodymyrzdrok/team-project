@@ -48,5 +48,10 @@
     <symbol id="custom-select" viewBox="0 0 32 32">
       <path d="m16 18.667-5.333-5.333h10.667l-5.333 5.333z"/>
     </symbol>
+    </symbol>
+<symbol id="checkbox" viewBox="0 0 42 32">
+<path    stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="0.64" d="M6.262 15.206l-0.221-0.211-0.221 0.208-3.085 2.925 0.243 0.234 11.408 10.88 0.221-0.211 24.256-23.139-0.243-0.23-3.043-2.902-0.221 0.211-20.97 19.987-8.125-7.75z'" ></path>
+</symbol>
   </defs>
 </svg>
+ 
