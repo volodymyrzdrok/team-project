@@ -1,5 +1,5 @@
 .recipes{
-    
+    margin-bottom:  100px;
     padding: 20px 0;
     @media screen and (min-width:$tablet) {
         padding: 94px 0;
@@ -22,7 +22,6 @@
     &__item{
         text-align: center;
         width: 245px;
-        height: 236px;
         &:not(:last-child){
             margin-bottom: 40px;
         }
