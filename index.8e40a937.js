@@ -1,0 +1,2 @@
+var slideIndex=1;function plusSlides(e){showSlides(slideIndex+=e)}function currentSlide(e){showSlides(slideIndex=e)}function showSlides(e){var l,s=document.getElementsByClassName("productSlides");for(e>s.length&&(slideIndex=1),e<1&&(slideIndex=s.length),l=0;l<s.length;l++)s[l].style.display="none",s[l].style.opacity="0";s[slideIndex-1].style.display="block",s[slideIndex-1].style.opacity="1"}showSlides(slideIndex);
+//# sourceMappingURL=index.8e40a937.js.map
