@@ -3,22 +3,32 @@
 // }
 
 .container__gradient {
-  background: linear-gradient(270deg, #6f6666 2.17%, #100f0f 75.72%);
-
+  // background: linear-gradient(270deg, #6f6666 2.17%, #100f0f 75.72%);
+  background: linear-gradient(248deg, #6f6666 2.17%, #100f0f 47.72%);
   @media (min-width: $tablet) {
+    // background: linear-gradient(
+    //   256.51deg,
+    //   rgba(111, 102, 102, 0.9) 26.96%,
+    //   rgba(16, 15, 15, 0.9) 79.08%,
+    //   rgba(16, 15, 15, 0.9) 79.08%
+    // );
     background: linear-gradient(
-      256.51deg,
-      rgba(111, 102, 102, 0.9) 26.96%,
-      rgba(16, 15, 15, 0.9) 79.08%,
-      rgba(16, 15, 15, 0.9) 79.08%
+      215.51deg,
+      #6f6666e6 1.96%,
+      #100f0fe6 41.08% 79.08%
     );
   }
   @media (min-width: $desktop) {
+    // background: linear-gradient(
+    //   228.52deg,
+    //   rgba(111, 102, 102, 0.9) 4.71%,
+    //   rgba(16, 15, 15, 0.9) 39.77%,
+    //   rgba(16, 15, 15, 0.9) 44.21%
+    // );
     background: linear-gradient(
-      228.52deg,
-      rgba(111, 102, 102, 0.9) 4.71%,
-      rgba(16, 15, 15, 0.9) 39.77%,
-      rgba(16, 15, 15, 0.9) 44.21%
+      211.52deg,
+      #6f6666e6 4.71%,
+      #100f0fe6 42.77% 44.21%
     );
   }
 }
