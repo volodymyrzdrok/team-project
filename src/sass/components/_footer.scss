@@ -5,17 +5,14 @@
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-
+  @include centeredFlex(space-between, null);
   @media (min-width: $tablet) {
     display: inline;
   }
 }
 
 .footer-logo {
-  display: flex;
-  align-items: center;
+  @include centeredFlex(null, center);
 }
 
 .footer-logo__svg {
@@ -33,10 +30,7 @@
   @include font(16px, 19px, 600);
 
   @media (min-width: $tablet) {
-    font-family: Montserrat;
-
     @include font(20px, 24px, 700);
-    letter-spacing: 0em;
     text-align: left;
   }
 }
@@ -68,9 +62,7 @@
 
 .nav-contact-flex {
   @media (min-width: $tablet) {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include centeredFlex(space-between, center);
   }
 }
 
@@ -84,8 +76,8 @@
 
 .contact__link {
   color: $icon-fill;
-  display: flex;
-  align-items: center;
+
+  @include centeredFlex(null, center);
   margin-bottom: 16px;
 
   transition: color $animation;
@@ -171,8 +163,7 @@
     margin-bottom: 16px;
   }
 
-  display: flex;
-  justify-content: center;
+  @include centeredFlex(center, null);
 
   @media (min-width: $tablet) {
     margin-top: 24px;
