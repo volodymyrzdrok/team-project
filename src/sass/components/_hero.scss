@@ -141,6 +141,7 @@
   }
 
   @media screen and (min-width: $tablet) {
+    @include font(30px, 37px, 500);
     min-width: 302px;
     height: 77px;
     margin-bottom: 48px;
